@@ -1,8 +1,10 @@
+import WeatherComponent from "@/components/WeatherComponent";
+
 const Weather = async ({
   params: { location },
   searchParams: { latitude, longitude },
 }) => {
-  return <div>This is weather page</div>;
+  return <WeatherComponent lat={latitude} long={longitude} />;
 };
 
 export default Weather;
