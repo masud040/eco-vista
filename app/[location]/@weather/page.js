@@ -1,8 +1,7 @@
-import { getLocationData } from "@/lib/location-info";
-
-const Weather = async ({ searchParams: { latitude, longitude } }) => {
-  const location = await getLocationData(latitude, longitude);
-  console.log(location);
+const Weather = async ({
+  params: { location },
+  searchParams: { latitude, longitude },
+}) => {
   return <div>This is weather page</div>;
 };
 
