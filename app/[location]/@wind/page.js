@@ -1,10 +1,16 @@
+import NoWindFound from "@/components/NoWindFound";
 import WindComponent from "@/components/WindComponent";
+import { getLocationLatLong } from "@/lib/location-info";
 
-const WindPage = ({
+const WindPage = async ({
   params: { location },
   searchParams: { latitude, longitude },
 }) => {
-  return <WindComponent lat={latitude} long={longitude} />;
+  const result = await getLocationLatLong(location, latitude, longitude);
+  if (result?.lat && result?.lon) {
+    return <WindComponent lat={result?.lat} long={result?.lon} />;
+  }
+  return <NoWindFound />;
 };
 
 export default WindPage;
