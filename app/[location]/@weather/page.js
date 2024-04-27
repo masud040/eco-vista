@@ -10,7 +10,7 @@ const Weather = async ({
   if (result?.lat && result?.lon) {
     return <WeatherComponent lat={result?.lat} long={result?.lon} />;
   }
-  return <NoWeatherFound />;
+  return <NoWeatherFound location={location} />;
 };
 
 export default Weather;

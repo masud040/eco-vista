@@ -10,7 +10,7 @@ const AQIPage = async ({
   if (result?.lat && result?.lon) {
     return <AQIComponent lat={result?.lat} long={result?.lon} />;
   }
-  return <NoAQIFound />;
+  return <NoAQIFound location={location} />;
 };
 
 export default AQIPage;

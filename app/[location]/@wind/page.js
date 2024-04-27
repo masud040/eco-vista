@@ -10,7 +10,7 @@ const WindPage = async ({
   if (result?.lat && result?.lon) {
     return <WindComponent lat={result?.lat} long={result?.lon} />;
   }
-  return <NoWindFound />;
+  return <NoWindFound location={location} />;
 };
 
 export default WindPage;

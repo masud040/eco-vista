@@ -10,7 +10,7 @@ const Temparature = async ({
   if (result?.lat && result?.lon) {
     return <TemperatureComponent lat={result?.lat} long={result?.lon} />;
   }
-  return <NoTemperatureFound />;
+  return <NoTemperatureFound location={location} />;
 };
 
 export default Temparature;
